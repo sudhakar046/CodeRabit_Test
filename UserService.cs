@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +8,11 @@ namespace CodeRabbit_Test
 {
     public class UserService
     {
+        /// <summary>
+        /// Illustrates various approaches to comparing a username to the string "admin".
+        /// </summary>
+        /// <param name="username">The username to evaluate.</param>
+        /// <param name="email">The email address associated with the user.</param>
         public void CreateUser(string username, string email)
         {
             //if (string.IsNullOrWhiteSpace(username))
