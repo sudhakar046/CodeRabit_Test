@@ -10,11 +10,8 @@ namespace CodeRabit_Test
     {
         public void CreateUser(string username, string email)
         {
-            if (username == null)
-                throw new ArgumentNullException(nameof(username));
-
-            // Email is not checked
-            Console.WriteLine($"Creating user {username} with email {email}");
+            // Directly using without null/empty validation
+            Console.WriteLine($"Creating user {username.ToUpper()} with email {email.ToLower()}");
         }
 
     }
