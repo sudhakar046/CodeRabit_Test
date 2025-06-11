@@ -28,19 +28,9 @@ namespace CodeRabbit_Test
             //Console.WriteLine(
             //    $"Creating user {username.Trim().ToUpperInvariant()} with email {email.Trim().ToLowerInvariant()}");
 
-            if (username == "admin")
+            if (string.Equals(username, "admin", StringComparison.OrdinalIgnoreCase))
             {
-                // ❌ Case-sensitive, culture-sensitive, and may fail unexpectedly
-            }
-
-            if (username.ToLower() == "admin")
-            {
-                // ❌ Inefficient and can cause bugs with Turkish i, etc.
-            }
-
-            if (username.Equals("admin"))
-            {
-                // ❌ Throws NullReferenceException if userInput is null
+                // TODO: handle admin-specific logic here
             }
 
 
