@@ -10,8 +10,18 @@ namespace CodeRabit_Test
     {
         public void CreateUser(string username, string email)
         {
-            // Directly using without null/empty validation
-            Console.WriteLine($"Creating user {username.ToUpper()} with email {email.ToLower()}");
+            if (string.IsNullOrWhiteSpace(username))
+                throw new ArgumentException("Username must be provided.", nameof(username));
+
+            if (string.IsNullOrWhiteSpace(email))
+                throw new ArgumentException("Email must be provided.", nameof(email));
+
+            // Rudimentary e-mail sanity-check; replace with full validator if available
+            if (!email.Contains('@'))
+                throw new FormatException($"Invalid e-mail address: {email}");
+
+            Console.WriteLine(
+                $"Creating user {username.Trim().ToUpperInvariant()} with email {email.Trim().ToLowerInvariant()}");
         }
 
     }
